@@ -11,6 +11,10 @@
         }
     </style>
 	<link rel="stylesheet" href="styles.css">
+	<script>
+        document.addEventListener("contextmenu", event => event.preventDefault());
+        document.addEventListener("copy", event => event.preventDefault());
+    </script>
 </head>
 <body class="bg-blue-50 text-gray-900">
     
@@ -55,9 +59,19 @@
     
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-100 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact</h2>
-        <p class="text-lg">Reach me at: <a href="mailto:your.email@example.com" class="text-blue-600">your.email@example.com</a></p>
+		<h2>Contact</h2>
+		<p>Fill out the form below to contact me:</p>
+		<form action="https://formspree.io/f/mpwqbkqq" method="POST">
+			<input type="email" name="email" placeholder="Your Email" required>
+			<textarea name="message" placeholder="Your Message" required></textarea>
+			
+			<!-- Honeypot (hidden field to trap spam bots) -->
+			<input type="text" name="honeypot" style="display:none;">
+			
+			<button type="submit">Send</button>
+		</form>
     </section>
-    
+
+
 </body>
 </html>
