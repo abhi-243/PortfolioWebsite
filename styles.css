@@ -1,11 +1,9 @@
-html {
-    scroll-behavior: smooth;
+/* Hide honeypot field (spam bots may still see it) */
+input[name="honeypot"] {
+    display: none;
 }
 
+/* Additional styling */
 body {
     font-family: Arial, sans-serif;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
