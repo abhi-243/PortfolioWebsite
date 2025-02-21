@@ -14,86 +14,71 @@
 </head>
 <body class="bg-blue-50 text-gray-900">
     
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="fixed w-full bg-blue-600 text-white p-4 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold">Your Name</h1>
             <div>
                 <a href="#about" class="px-4">About</a>
-                <a href="resume.pdf" download class="px-6 py-2 bg-blue-600 text-white rounded-lg">Download Resume</a>
+                <a href="resume.pdf" download class="px-6 py-2 bg-white text-blue-600 rounded-lg">Download Resume</a>
                 <a href="#projects" class="px-4">Projects</a>
                 <a href="#contact" class="px-4">Contact</a>
             </div>
         </div>
     </nav>
-    
+
     <!-- Hero Section -->
-    <section class="h-screen flex items-center justify-center bg-blue-700 text-white text-center">
-        <div>
+    <section class="h-screen flex items-center justify-center bg-cover bg-center text-white text-center" style="background-image: url('profile.jpg');">
+        <div class="bg-black bg-opacity-50 p-6 rounded-lg">
             <h1 class="text-5xl font-bold">Your Name</h1>
             <p class="text-xl mt-4">Mechatronic Engineer | Tutor | Cadet Instructor</p>
         </div>
     </section>
-    
+
     <!-- About Section -->
-    <section id="about" class="py-16 container mx-auto px-8">
-        <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
-        <p class="text-lg text-center max-w-3xl mx-auto">
-            A brief introduction about your background, studies at UTS, work at Alchemy Tuition, and role in the Australian Air Force Cadets.
+    <section id="about" class="py-16 container mx-auto px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6">About Me</h2>
+        <p class="text-lg max-w-3xl mx-auto">
+            Add a brief introduction about yourself, your work, education, and skills.
         </p>
     </section>
-    
+
     <!-- Resume Section -->
     <section id="resume" class="py-16 bg-gray-100 text-center">
         <h2 class="text-3xl font-bold mb-6">Resume</h2>
         <a href="resume.pdf" class="px-6 py-2 bg-blue-600 text-white rounded-lg">Download Resume</a>
     </section>
-    
+
     <!-- Projects Section -->
-    <section id="projects" class="py-16 container mx-auto px-8">
-        <h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
-        <p class="text-lg text-center">List of projects will go here.</p>
+    <section id="projects" class="py-16 container mx-auto px-8 text-center">
+        <h2 class="text-3xl font-bold mb-6">Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-6 bg-white shadow-md rounded-lg">
+                <h3 class="text-xl font-bold">Project 1</h3>
+                <p class="text-gray-700">Description of your project.</p>
+                <a href="https://github.com/your-repo" class="text-blue-600 underline">View on GitHub</a>
+            </div>
+            <div class="p-6 bg-white shadow-md rounded-lg">
+                <h3 class="text-xl font-bold">Project 2</h3>
+                <p class="text-gray-700">Description of your project.</p>
+                <a href="https://github.com/your-repo" class="text-blue-600 underline">View on GitHub</a>
+            </div>
+        </div>
     </section>
-    
+
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-gray-100 text-center">
-        <h2>Contact</h2>
-        <p>Fill out the form below to contact me:</p>
-        <form action="https://formspree.io/f/mpwqbkqq" method="POST" onsubmit="return checkHoneypot()">
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-
+        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+        <form action="https://formspree.io/f/mpwqbkqq" method="POST" class="max-w-lg mx-auto">
+            <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded-lg mb-3">
+            <textarea name="message" placeholder="Your Message" required class="w-full p-2 border rounded-lg mb-3"></textarea>
+            
             <!-- Honeypot (hidden field to trap spam bots) -->
             <input type="text" name="honeypot" id="honeypot" style="display:none;">
-
-            <button type="submit">Send</button>
+            
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg">Send</button>
         </form>
     </section>
 
-    <!-- Security Scripts -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Disable right-click and copying
-            document.addEventListener("contextmenu", event => event.preventDefault());
-            document.addEventListener("copy", event => event.preventDefault());
-
-            // Secure Email Display (Prevent bots from scraping email)
-            let user = "yourname";
-            let domain = "gmail.com";
-            let emailLink = document.createElement("a");
-            emailLink.href = "mailto:" + user + "@" + domain;
-            emailLink.textContent = "Email Me";
-            document.getElementById("contact").appendChild(emailLink);
-        });
-
-        // Prevent spam bots by checking honeypot field
-        function checkHoneypot() {
-            if (document.getElementById("honeypot").value !== "") {
-                alert("Spam detected. Submission blocked.");
-                return false; // Stop the form from submitting
-            }
-            return true; // Allow form submission
-        }
-    </script>
 </body>
 </html>
