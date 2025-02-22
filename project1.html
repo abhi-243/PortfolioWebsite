@@ -1,25 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1 | Your Name</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-gray-100 text-gray-900">
-    <!-- Navigation -->
-    <nav class="bg-blue-600 text-white p-4 shadow-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold">Your Name</a>
-        </div>
-    </nav>
 
-    <!-- Project Details Section -->
-    <section class="container mx-auto px-8 py-16 text-center">
-        <h2 class="text-3xl font-bold mb-6">Project 1: Detailed Information</h2>
-        <img src="images/project1.jpg" alt="Project 1" class="w-full h-64 object-cover rounded-lg mb-6">
-        <p class="text-lg mb-6">Detailed description of the project, technologies used, challenges faced, and outcomes achieved.</p>
-        <a href="https://github.com/your-repo/project1" class="text-blue-600 underline">View on GitHub</a>
-    </section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 - Your Name</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 font-roboto text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full bg-blue-900 shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center py-3 px-6">
+      <h1 class="text-xl font-bold text-white">Your Name</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html#about" class="hover:text-blue-300">About</a></li>
+        <li><a href="index.html#experience" class="hover:text-blue-300">Experience</a></li>
+        <li><a href="index.html#leadership" class="hover:text-blue-300">Leadership</a></li>
+        <li><a href="index.html#proficiencies" class="hover:text-blue-300">Skills</a></li>
+        <li><a href="index.html#projects" class="hover:text-blue-300">Projects</a></li>
+        <li><a href="index.html#contact" class="hover:text-blue-300">Contact</a></li>
+        <li><a href="resume.pdf" target="_blank" class="text-blue-300 font-bold">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="h-80 flex items-center justify-center bg-cover bg-center text-white text-center relative"
+    style="background-image: url('images/project1-bg.jpg');">
+    <div class="absolute inset-0 bg-blue-900 bg-opacity-60"></div>
+    <div class="relative z-10">
+      <h1 class="text-5xl font-bold">Project 1</h1>
+      <p class="text-xl mt-2">Short description of the project</p>
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <section class="py-16 bg-blue-800 text-center">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
+      <img src="images/project1.jpg" alt="Project 1" class="w-full h-80 object-cover rounded-lg shadow-md mb-6">
+      <p class="text-lg text-gray-200">
+        Detailed description of the project, its goals, challenges faced, and how it was developed.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-blue-900 text-center">
+    <h2 class="text-3xl font-bold mb-6">Features</h2>
+    <div class="grid md:grid-cols-2 gap-6 container mx-auto max-w-4xl">
+      <div class="p-6 bg-blue-700 shadow-md rounded-lg">
+        <h3 class="text-xl font-bold">Feature 1</h3>
+        <p class="text-gray-200 mt-2">Explanation of the first key feature.</p>
+      </div>
+      <div class="p-6 bg-blue-700 shadow-md rounded-lg">
+        <h3 class="text-xl font-bold">Feature 2</h3>
+        <p class="text-gray-200 mt-2">Explanation of the second key feature.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Projects -->
+  <section class="py-8 text-center bg-blue-800">
+    <a href="index.html#projects" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">Back to Projects</a>
+  </section>
+
 </body>
+
 </html>
