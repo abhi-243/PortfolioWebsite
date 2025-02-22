@@ -14,6 +14,24 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Smooth Scrolling -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("nav a").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      // Disable right-click context menu
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+      });
+    });
+  </script>
 </head>
 
 <body class="bg-gray-100 font-roboto text-slate-800">
