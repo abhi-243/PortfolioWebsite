@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Projects</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 font-roboto text-slate-800">
+  
+  <!-- Navigation Bar -->
+  <nav class="fixed top-0 left-0 w-full bg-blue-900 shadow-md z-50 bg-opacity-60">
+    <div class="container mx-auto flex justify-between items-center py-3 px-6">
+      <h1 class="text-xl font-bold text-white">Your Name</h1>
+      <ul class="flex space-x-6">
+        <li><a href="index.html#about" class="hover:text-blue-300">About</a></li>
+        <li><a href="index.html#experience" class="hover:text-blue-300">Experience</a></li>
+        <li><a href="index.html#leadership" class="hover:text-blue-300">Leadership</a></li>
+        <li><a href="index.html#proficiencies" class="hover:text-blue-300">Skills</a></li>
+        <li><a href="index.html#projects" class="hover:text-blue-300">Projects</a></li>
+        <li><a href="index.html#contact" class="hover:text-blue-300">Contact</a></li>
+        <li><a href="resume.pdf" target="_blank" class="text-blue-300 font-bold">Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Page Header -->
+  <section class="h-40 flex items-center justify-center bg-slate-700 text-slate-200 text-center mt-12">
+    <h1 class="text-4xl font-bold">Personal Projects</h1>
+  </section>
+  
+  <!-- Projects Section -->
+  <section class="container mx-auto py-16 px-6 space-y-16">
+    
+    <!-- Project 1 -->
+    <div class="flex flex-col md:flex-row items-center md:items-start">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold">Project 1</h2>
+        <p class="text-lg text-gray-700 mt-2">Brief description of Project 1, highlighting key features and challenges faced.</p>
+      </div>
+      <img src="images/personal_project1.jpg" alt="Project 1" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+    </div>
+
+    <!-- Project 2 -->
+    <div class="flex flex-col md:flex-row-reverse items-center md:items-start">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold">Project 2</h2>
+        <p class="text-lg text-gray-700 mt-2">Brief description of Project 2, outlining its goals and development process.</p>
+      </div>
+      <img src="images/personal_project2.jpg" alt="Project 2" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+    </div>
+
+    <!-- Project 3 -->
+    <div class="flex flex-col md:flex-row items-center md:items-start">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl font-bold">Project 3</h2>
+        <p class="text-lg text-gray-700 mt-2">Summary of Project 3, detailing its impact and functionality.</p>
+      </div>
+      <img src="images/personal_project3.jpg" alt="Project 3" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+    </div>
+    
+  <!-- Back to Projects -->
+  <section class="py-8 text-center bg-blue-900 bg-opacity-50">
+    <a href="index.html#projects" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">Back to Projects</a>
+  </section>
+
+  </section>
+
+</body>
+
+</html>
