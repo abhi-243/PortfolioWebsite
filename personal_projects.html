@@ -15,41 +15,32 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 
-<!-- Smooth Scrolling -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("nav a").forEach(anchor => {
-      anchor.addEventListener("click", function (e) {
-        // Get the href attribute and handle only internal links
-        const targetSelector = this.getAttribute("href");
-
-        // Check if the href is an internal link and prevent the default action
-        if (targetSelector.startsWith("#") || targetSelector.startsWith("index.html#")) {
-          e.preventDefault();
-
-          // Query for the target element
-          const target = document.querySelector(targetSelector);
-
-          // Only call scrollIntoView if the target exists
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          } else {
-            console.error(`Target element with selector "${targetSelector}" not found.`);
+  <!-- Smooth Scrolling -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("nav a").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+          const targetSelector = this.getAttribute("href");
+          if (targetSelector.startsWith("#") || targetSelector.startsWith("index.html#")) {
+            e.preventDefault();
+            const target = document.querySelector(targetSelector);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            } else {
+              console.error(`Target element with selector "${targetSelector}" not found.`);
+            }
           }
-        }
+        });
+      });
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
       });
     });
-
-    // Disable right-click context menu
-    document.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-  });
-</script>
-
+  </script>
+</head>
 
 <body class="bg-gray-100 font-roboto text-slate-800">
-  
+
   <!-- Sticky Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full bg-blue-900 shadow-md z-50 bg-opacity-60">
     <div class="container mx-auto flex justify-between items-center py-3 px-6">
@@ -65,47 +56,70 @@
       </ul>
     </div>
   </nav>
-  
+
   <!-- Page Header -->
   <section class="h-40 flex items-center justify-center bg-slate-700 text-slate-200 text-center mt-12">
     <h1 class="text-4xl font-bold">Personal Projects</h1>
   </section>
-  
+
   <!-- Projects Section -->
   <section class="container mx-auto py-16 px-6 space-y-16">
-    
+
     <!-- Project 1 -->
     <div class="flex flex-col md:flex-row items-center md:items-start">
+      <!-- Commented-out original content -->
+      <!--
       <div class="md:w-1/2 text-center md:text-left">
         <h2 class="text-3xl font-bold">Search And Rescue Robot</h2>
         <p class="text-lg text-gray-700 mt-2">Brief description of Project 1, highlighting key features and challenges faced.</p>
       </div>
       <img src="images/personal_project1.jpg" alt="Project 1" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+      -->
+      <!-- Under Construction Replacement -->
+      <div class="w-full text-center">
+        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
+        <p class="text-lg text-gray-700 mt-2">Project 1 details will be available soon.</p>
+      </div>
     </div>
 
     <!-- Project 2 -->
     <div class="flex flex-col md:flex-row-reverse items-center md:items-start">
+      <!-- Commented-out original content -->
+      <!--
       <div class="md:w-1/2 text-center md:text-left">
         <h2 class="text-3xl font-bold">Project 2</h2>
         <p class="text-lg text-gray-700 mt-2">Brief description of Project 2, outlining its goals and development process.</p>
       </div>
       <img src="images/personal_project2.jpg" alt="Project 2" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+      -->
+      <!-- Under Construction Replacement -->
+      <div class="w-full text-center">
+        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
+        <p class="text-lg text-gray-700 mt-2">Project 2 details will be available soon.</p>
+      </div>
     </div>
 
     <!-- Project 3 -->
     <div class="flex flex-col md:flex-row items-center md:items-start">
+      <!-- Commented-out original content -->
+      <!--
       <div class="md:w-1/2 text-center md:text-left">
         <h2 class="text-3xl font-bold">Project 3</h2>
         <p class="text-lg text-gray-700 mt-2">Summary of Project 3, detailing its impact and functionality.</p>
       </div>
       <img src="images/personal_project3.jpg" alt="Project 3" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
+      -->
+      <!-- Under Construction Replacement -->
+      <div class="w-full text-center">
+        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
+        <p class="text-lg text-gray-700 mt-2">Project 3 details will be available soon.</p>
+      </div>
     </div>
-    
-  <!-- Back to Projects -->
-  <section class="py-8 text-center bg-blue-900 bg-opacity-50">
-    <a href="index.html#projects" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">Back to Projects</a>
-  </section>
 
+    <!-- Back to Projects -->
+    <section class="py-8 text-center bg-blue-900 bg-opacity-50">
+      <a href="index.html#projects" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">Back to Projects</a>
+    </section>
   </section>
 
 </body>
