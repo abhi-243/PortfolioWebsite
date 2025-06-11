@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Override Roboto to match index.html */
   background-color: #f3f4f6;
   color: white;
   margin: 0;
@@ -8,43 +8,43 @@ body {
 }
 
 /* Navigation Bar */
-nav {
-  background-color: #1e3a8a;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 10px; /* Use smaller gap for small screens */
+  justify-content: center; /* Center nav links for small screens */
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    justify-content: flex-end; /* On larger screens, push to the right */
+    gap: 20px; /* Restore original gap */
+  }
 }
 
 nav a {
   text-decoration: none;
   color: white;
   transition: color 0.3s ease;
+  font-size: 0.9rem; /* Smaller font on small screens */
 }
 
-nav a:hover {
-  color: #93c5fd;
+@media (min-width: 768px) {
+  nav a {
+    font-size: 1rem; /* Restore size on larger screens */
+  }
 }
 
 /* Sections */
 section {
-  padding: 80px 20px;
-  text-align: center;
+  padding: 60px 15px; /* Reduced default padding */
 }
 
-.bg-blue-800 {
-  background-color: #1e40af;
-}
-
-.bg-blue-900 {
-  background-color: #1e3a8a;
-}
-
-.bg-blue-700 {
-  background-color: #1d4ed8;
+@media (min-width: 768px) {
+  section {
+    padding: 80px 20px; /* Larger padding on bigger screens */
+  }
 }
 
 /* Cards */
@@ -74,6 +74,7 @@ input, textarea {
   width: 100%;
   margin-bottom: 10px;
   border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 
 button {

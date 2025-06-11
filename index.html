@@ -12,6 +12,9 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
     <script>
      document.addEventListener("DOMContentLoaded", () => {
        document.querySelectorAll("nav a").forEach(anchor => {
@@ -32,16 +35,13 @@
       });
    </script>
   
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-gray-100 text-white font-poppins">
 
   <!-- Sticky Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full bg-blue-900 shadow-md z-50 bg-opacity-60">
-    <div class="container mx-auto flex justify-between items-center py-3 px-6">
+    <div class="container mx-auto flex flex-wrap justify-between items-center py-3 px-6">
       <h1 class="text-xl font-bold text-white">Abhi Naglapura</h1>
       <ul class="flex space-x-6">
         <li><a href="#about" class="hover:text-blue-300">About</a></li>
@@ -74,10 +74,10 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-16 bg-slate-50 text-center text-black">
+  <section id="about" class="bg-slate-50 text-center text-black">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <img src="images/profile.jpg" alt="Your Name" class="w-128 h-80 mx-auto mb-4 shadow-lg">
+      <img src="images/profile.jpg" alt="Your Name" class="w-full max-w-xs h-auto mx-auto mb-4 shadow-lg">
       <p class="text-lg text-gray-700 max-w-6xl mx-auto mt-2 font-poppins">
         Hi there, I'm Abhi Naglapura!<br><br>I'm a Mechatronic Engineering student at the University of Technology Sydney (UTS) with a passion for aerospace, rocketry, and robotics.
         I have a lot of hands-on experience with various controllers such as an ESP32 and Raspberry Pi, to name a few, and I’m currently working on building a full scale, fully functional R2-D2. I also enjoy looking into RF with my amateur radio license and exploring satellite frequencies.
@@ -91,7 +91,7 @@
   </section>
 
   <!-- Professional Experience -->
-  <section id="experience" class="py-16 bg-slate-50 text-center">
+  <section id="experience" class="bg-slate-50 text-center">
     <h2 class="text-3xl font-bold mb-6 text-black">Professional Experience</h2>
     <div class="grid md:grid-cols-2 gap-6 container mx-auto">
       <div class="p-6 bg-slate-300 shadow-md rounded-lg">
@@ -106,7 +106,7 @@
   </section>
 
   <!-- Leadership Section -->
-  <section id="leadership" class="py-16 bg-slate-50 text-center">
+  <section id="leadership" class="bg-slate-50 text-center">
     <h2 class="text-3xl font-bold mb-6 text-black">Leadership</h2>
     <div class="container mx-auto max-w-3xl">
       <div class="p-6 bg-slate-300 shadow-md rounded-lg">
@@ -120,7 +120,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 bg-slate-50 text-center">
+  <section id="projects" class="bg-slate-50 text-center">
     <h2 class="text-3xl font-bold mb-6 text-black">Projects</h2>
   
     <div class="container mx-auto">
@@ -131,7 +131,7 @@
           <h3 class="text-2xl font-bold text-gray-700 mb-4">Personal Projects</h3>
           <a href="personal_projects.html" class="block">
             <div class="p-6 bg-slate-700 shadow-md rounded-lg transition transform hover:-translate-y-2">
-              <img src="images/personal.jpg" alt="Personal Projects" class="w-full h-48 object-cover rounded-t-lg mb-4">
+              <img src="images/personal.jpg" alt="Personal Projects" class="w-full h-auto object-cover rounded-t-lg mb-4">
               <h3 class="text-xl font-bold text-slate-200">View Personal Projects</h3>
             </div>
           </a>
@@ -142,7 +142,7 @@
           <h3 class="text-2xl font-bold text-gray-700 mb-4">Undergraduate Projects</h3>
           <a href="undergrad_projects.html" class="block">
             <div class="p-6 bg-slate-700 shadow-md rounded-lg transition transform hover:-translate-y-2">
-              <img src="images/undergrad.jpg" alt="Undergraduate Projects" class="w-full h-48 object-cover rounded-t-lg mb-4">
+              <img src="images/undergrad.jpg" alt="Undergraduate Projects" class="w-full h-auto object-cover rounded-t-lg mb-4">
               <h3 class="text-xl font-bold text-slate-200">View Undergraduate Projects</h3>
             </div>
           </a>
@@ -155,7 +155,7 @@
 
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-blue-900 text-center bg-opacity-50">
+  <section id="contact" class="bg-blue-900 text-center bg-opacity-50">
     <h2 class="text-3xl font-bold mb-6">Contact</h2>
     <form action="https://formspree.io/f/mpwqbkqq" method="POST" class="max-w-lg mx-auto">
       <input type="email" name="email" placeholder="Your Email" required class="w-full p-2 border rounded-lg mb-3 text-black">
