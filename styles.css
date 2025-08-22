@@ -108,8 +108,8 @@ button:hover {
 }
 
 .github-link svg {
-  width: 25px;
-  height: 25px;
+  width: 10px;
+  height: 10px;
   fill: currentColor;
   flex-shrink: 0;
   transition: opacity .2s;
