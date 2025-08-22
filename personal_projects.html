@@ -20,18 +20,18 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("nav a").forEach(anchor => {
         anchor.addEventListener("click", function (e) {
-          const targetSelector = this.getAttribute("href");
-          if (targetSelector.startsWith("#") || targetSelector.startsWith("index.html#")) {
+          const href = this.getAttribute("href");
+          if (href && href.startsWith("#")) {
             e.preventDefault();
-            const target = document.querySelector(targetSelector);
+            const target = document.querySelector(href);
             if (target) {
               target.scrollIntoView({ behavior: "smooth" });
-            } else {
-              console.error(`Target element with selector "${targetSelector}" not found.`);
             }
           }
         });
       });
+
+      // Disable right-click context menu
       document.addEventListener("contextmenu", (e) => {
         e.preventDefault();
       });
@@ -41,11 +41,11 @@
 
 <body class="bg-gray-100 font-roboto text-slate-800">
 
-  <!-- Sticky Navigation Bar -->
+  <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 w-full bg-blue-900 shadow-md z-50 bg-opacity-60">
     <div class="container mx-auto flex flex-wrap justify-between items-center py-3 px-6">
       <h1 class="text-xl font-bold text-white">Abhi Naglapura</h1>
-      <ul class="flex flex-wrap space-x-6 gap-4">
+      <ul class="flex space-x-6">
         <li><a href="index.html#about" class="hover:text-blue-300">About</a></li>
         <li><a href="index.html#experience" class="hover:text-blue-300">Experience</a></li>
         <li><a href="index.html#leadership" class="hover:text-blue-300">Leadership</a></li>
@@ -58,70 +58,142 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="flex items-center justify-center bg-slate-700 text-slate-200 text-center">
+  <section class="flex items-center justify-center bg-slate-700 text-slate-200 text-center py-12 md:h-40 md:mt-12">
     <h1 class="text-4xl font-bold">Personal Projects</h1>
   </section>
 
   <!-- Projects Section -->
-  <section class="container max-w-5xl mx-auto px-4 md:px-6 space-y-16">
+  <section class="container mx-auto px-6 space-y-16">
 
     <!-- Project 1 -->
     <div class="flex flex-col md:flex-row items-center md:items-start">
-      <!-- Commented-out original content -->
-      <!--
       <div class="md:w-1/2 text-center md:text-left">
-        <h2 class="text-3xl font-bold">Search And Rescue Robot</h2>
-        <p class="text-lg text-gray-700 mt-2">Brief description of Project 1, highlighting key features and challenges faced.</p>
+        <h2 class="project-title">
+          Search and Rescue Robot
+          <a href="https://github.com/abhi-243/SAR-Rover" target="_blank" rel="noopener noreferrer"
+             class="github-link" aria-label="View on GitHub" title="View on GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 
+                5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82
+                -.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23
+                -.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63
+                -.01 1.08.58 1.23.82.72 1.21 1.87.87 
+                2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64
+                -.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2
+                -.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 
+                7.65 0 012.0-.27c.68.003 1.36.092 
+                2.0.27 1.53-1.04 2.2-.82 2.2-.82.44 
+                1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+                2.15 0 3.07-1.87 3.75-3.65 
+                3.95.29.25.54.73.54 1.48 0 
+                1.07-.01 1.93-.01 2.19 0 
+                .21.15.46.55.38A8.013 8.013 0 
+                0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+          </a>
+        </h2>
+        <p class="text-lg text-gray-700 mt-2">
+          This project involves the development of a Search and Rescue (SAR) Rover equipped with sensors and wireless communication for autonomous or semi-autonomous navigation in disaster scenarios. The rover is designed to traverse difficult terrain while detecting obstacles, transmitting live data, and aiding in locating survivors. Its modular architecture supports integrating additional payloads such as cameras, thermal sensors, or communication relays, making it adaptable to diverse rescue missions.
+          <br><br>
+          The system emphasizes reliability in hazardous environments, combining mobility with real-time feedback. It can serve as a platform for robotics research, disaster response simulations, or educational demonstrations in autonomous systems.
+        </p>
       </div>
-      <img src="images/personal_project1.jpg" alt="Project 1" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
-      -->
-      <!-- Under Construction Replacement -->
-      <div class="w-full text-center px-4">
-        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
-        <p class="text-lg text-gray-700 mt-2 max-w-xl mx-auto">Project details will be available soon.</p>
+      <div class="flex flex-wrap gap-4 mt-4 md:mt-0">
+        <img src="images/personal_project1_1.jpg" alt="Project 1*1" class="w-full md:w-80 h-auto object-cover rounded-lg shadow-md">
+        <img src="images/personal_project1_2.jpg" alt="Project 1*2" class="w-full md:w-80 h-auto object-cover rounded-lg shadow-md">
       </div>
     </div>
 
     <!-- Project 2 -->
-    <div class="flex flex-col md:flex-row-reverse items-center md:items-start">
-      <!-- Commented-out original content -->
-      <!--
+    <div class="flex flex-col md:flex-row items-center md:items-start">
       <div class="md:w-1/2 text-center md:text-left">
-        <h2 class="text-3xl font-bold">Project 2</h2>
-        <p class="text-lg text-gray-700 mt-2">Brief description of Project 2, outlining its goals and development process.</p>
+        <h2 class="project-title">
+          Rocket Beacon
+          <a href="https://github.com/abhi-243/Rocket-Beacon---ATTiny85" target="_blank" rel="noopener noreferrer"
+             class="github-link" aria-label="View on GitHub" title="View on GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 
+                5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82
+                -.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23
+                -.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63
+                -.01 1.08.58 1.23.82.72 1.21 1.87.87 
+                2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64
+                -.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2
+                -.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 
+                7.65 0 012.0-.27c.68.003 1.36.092 
+                2.0.27 1.53-1.04 2.2-.82 2.2-.82.44 
+                1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+                2.15 0 3.07-1.87 3.75-3.65 
+                3.95.29.25.54.73.54 1.48 0 
+                1.07-.01 1.93-.01 2.19 0 
+                .21.15.46.55.38A8.013 8.013 0 
+                0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          </a>
+        </h2>
+        <p class="text-lg text-gray-700 mt-2">
+          This project implements a miniature rocket beacon using the ATtiny85 microcontroller to track and recover model rockets after launch. The beacon transmits identifiable signals that can be received by ground equipment, enabling precise localization of the rocket even after long-distance flights. Its lightweight and compact design ensures minimal impact on flight performance while maintaining robust signal transmission.
+          <br><br>
+          The project demonstrates efficient use of constrained hardware by optimizing the ATtiny85 for low-power, high-reliability operation. It provides a practical solution for rocket recovery and serves as a foundation for further experimentation with telemetry and tracking technologies.
+        </p>
       </div>
-      <img src="images/personal_project2.jpg" alt="Project 2" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
-      -->
-      <!-- Under Construction Replacement -->
-      <div class="w-full text-center px-4">
-        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
-        <p class="text-lg text-gray-700 mt-2 max-w-xl mx-auto">Project details will be available soon.</p>
+      <div class="flex flex-wrap gap-4 mt-4 md:mt-0">
+        <img src="images/personal_project2_1.png" alt="Project 2*1" class="w-full md:w-auto h-80 object-cover rounded-lg shadow-md">
+        <img src="images/personal_project2_2.jpg" alt="Project 2*2" class="w-full md:w-40 h-auto object-cover rounded-lg shadow-md">
       </div>
     </div>
 
-    <!-- Project 3 -->
+    <!-- Project 2 -->
     <div class="flex flex-col md:flex-row items-center md:items-start">
-      <!-- Commented-out original content -->
-      <!--
       <div class="md:w-1/2 text-center md:text-left">
-        <h2 class="text-3xl font-bold">Project 3</h2>
-        <p class="text-lg text-gray-700 mt-2">Summary of Project 3, detailing its impact and functionality.</p>
+        <h2 class="project-title">
+          Owl-Chatbot
+          <a href="https://github.com/abhi-243/Owl-Chatbot" target="_blank" rel="noopener noreferrer"
+             class="github-link" aria-label="View on GitHub" title="View on GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.54 
+                5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82
+                -.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23
+                -.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63
+                -.01 1.08.58 1.23.82.72 1.21 1.87.87 
+                2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64
+                -.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2
+                -.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 
+                7.65 0 012.0-.27c.68.003 1.36.092 
+                2.0.27 1.53-1.04 2.2-.82 2.2-.82.44 
+                1.1.16 1.92.08 2.12.51.56.82 1.27.82 
+                2.15 0 3.07-1.87 3.75-3.65 
+                3.95.29.25.54.73.54 1.48 0 
+                1.07-.01 1.93-.01 2.19 0 
+                .21.15.46.55.38A8.013 8.013 0 
+                0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          </a>
+        </h2>
+        <p class="text-lg text-gray-700 mt-2">
+          This project develops Owl-Chatbot, a conversational AI application built with Python and Natural Language Processing (NLP) techniques to simulate human-like interactions. The chatbot is capable of understanding user input, processing context, and generating relevant responses, providing an engaging and interactive experience across various domains.
+          <br><br>
+          The implementation demonstrates the integration of rule-based and NLP-driven approaches, showcasing how text preprocessing, intent recognition, and response generation can be combined into a functional chatbot. Its modular design allows for easy customization and extension, making it adaptable for different use cases such as customer support, personal assistance, or educational tools.
+          <br><br>
+          By focusing on clarity, scalability, and user interaction, this project highlights the practical application of NLP in building intelligent conversational systems while serving as a strong foundation for future enhancements like machine learning–driven dialogue management and multi-platform deployment.
+        </p>
       </div>
-      <img src="images/personal_project3.jpg" alt="Project 3" class="md:w-1/2 h-64 object-cover rounded-lg shadow-md mt-4 md:mt-0">
-      -->
-      <!-- Under Construction Replacement -->
-      <div class="w-full text-center px-4">
-        <h2 class="text-3xl font-bold text-red-600">🚧 Under Construction 🚧</h2>
-        <p class="text-lg text-gray-700 mt-2 max-w-xl mx-auto">Project details will be available soon.</p>
+      <div class="flex flex-wrap gap-4 mt-4 md:mt-0">
+        <img src="images/personal_project3_1.png" alt="Project 2*1" class="w-full md:w-auto h-80 object-cover rounded-lg shadow-md">
+        <img src="images/personal_project3_2.jpg" alt="Project 2*2" class="w-full md:w-40 h-auto object-cover rounded-lg shadow-md">
       </div>
     </div>
   </section>
 
-  <!-- Back to Projects -->
-  <section class="py-8 text-center bg-blue-900 bg-opacity-50">
+  <!-- Back to Projects (mobile) -->
+  <section class="py-8 text-center bg-blue-900 bg-opacity-50 md:hidden">
     <a href="index.html#projects" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg">Back to Projects</a>
   </section>
 
-</body>
+  <!-- Floating Back (desktop) -->
+  <a href="index.html#projects" class="floating-back" aria-label="Back to Projects">
+    Back to Projects
+  </a>
 
+</body>
 </html>
