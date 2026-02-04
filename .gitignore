@@ -1,2 +1,5 @@
 config.json
 secret_files/
+node_modules/*
+*.json
+index.js
