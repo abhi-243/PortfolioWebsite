@@ -3,3 +3,6 @@ secret_files/
 node_modules/*
 *.json
 index.js
+secret.html
+valentines.html
+**/public/
